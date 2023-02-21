@@ -33,7 +33,7 @@ function handleProxyRequest(requestInfo) {
   if (blockedHosts.indexOf(url.hostname) != -1) {
 // Write details of the proxied host to the console and return the proxy address
     console.log(`Proxying: ${url.hostname}`);
-    return {type: "http", host: "127.0.0.1", port: 65535};
+    return {type: "socks", host: "127.0.0.1", port: 1080, proxyDNS: true};
   }
 // Return instructions to open the requested webpage
   return {type: "direct"};
